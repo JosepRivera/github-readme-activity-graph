@@ -2,6 +2,16 @@ import { Colors } from 'src/interfaces/interface';
 
 export const selectColors = (queryString: string): Colors => {
     switch (queryString) {
+        case 'rivera':
+            return {
+                areaColor: '58a6ff',
+                bgColor: '0d1117',
+                borderColor: '30363d',
+                color: 'c9d1d9',
+                titleColor: 'c9d1d9',
+                lineColor: '58a6ff',
+                pointColor: 'ffffff',
+            };
         case 'github':
             return {
                 areaColor: '9ecbff',

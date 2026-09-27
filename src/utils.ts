@@ -12,7 +12,7 @@ export class Utilities {
     }
 
     private getColors() {
-        const theme = this.queryString.theme || 'default';
+        const theme = this.queryString.theme || 'rivera';
         return {
             areaColor: this.queryString.area_color
                 ? this.queryString.area_color
@@ -22,7 +22,7 @@ export class Utilities {
                 : selectColors(theme).bgColor,
             borderColor: this.queryString.border_color
                 ? this.queryString.border_color
-                : String(this.queryString.hide_border) === 'true'
+                : String(this.queryString.hide_border) !== 'false'
                   ? '0000' // transparent
                   : selectColors(theme).borderColor,
             color: this.queryString.color ? this.queryString.color : selectColors(theme).color,
@@ -84,10 +84,7 @@ export class Utilities {
     }
 
     public queryOptions() {
-        let area = false;
-        if (String(this.queryString.area) === 'true') {
-            area = true;
-        }
+        const area = String(this.queryString.area) !== 'false';
 
         // Custom options for user
         const colors = this.getColors();
